@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Lab_03</title>
+    <h:outputStylesheet name="css/style.css" />
+</h:head>
+<h:body>
+    <div id="page" style ="min-height: 100%; display: grid; grid-template-rows: auto 1fr auto">
+        <div id="header" role="banner">
+            <ui:insert name="header" >
+                <ui:include src="./sources/header.xhtml" />
+            </ui:insert>
+        </div>
+        <div id="body" role="main">
+            <div class="canvas" style="display: inline-block; vertical-align:top">
+                <canvas id="graph" width="390" height="390"></canvas>
+            </div>
+            <div class="value_picker" style="display: inline-block">
+                <h:form class="form_frame" id="form" onsubmit="return validate(this)">
+                    <div class="value_picker_field">
+                        <p class="value_picker_field_x" style="display: inline-block">
+                            <label for="input_x">X</label>
+                                <p:inputText type="hidden" id="input_x" name="input_x" value="#{attempt.x}" />
+                                <p:selectOneRadio id="x" name="x" value="0" onclick="selectFieldX(this.id)">
+                                    <f:selectItem itemLabel="-4" itemValue="-4" />
+                                    <f:selectItem itemLabel="-3" itemValue="-3" />
+                                    <f:selectItem itemLabel="-2" itemValue="-2" />
+                                    <f:selectItem itemLabel="-1" itemValue="-1" />
+                                    <f:selectItem itemLabel="0" itemValue="0" />
+                                    <f:selectItem itemLabel="1" itemValue="1" />
+                                    <f:selectItem itemLabel="2" itemValue="2" />
+                                    <f:selectItem itemLabel="3" itemValue="3" />
+                                    <f:selectItem itemLabel="4" itemValue="4" />
+                                </p:selectOneRadio>
+                        </p>
+                    </div>
+                    <div class="value_picker_field">
+                        <p class="value_picker_field_y">
+                            <label for="input_y">Y</label>
+                            <p:inputNumber id="input_y" name="input_y" value="#{attempt.y}" required="true" decimalSeparator=".">
+                            </p:inputNumber>
+                            <label id="error_y"></label>
+                        </p>
+                    </div>
+                    <div class="value_picker_field">
+                        <p class="value_picker_field_r">
+                            <label for="input_r">R</label>
+                            <p:inputNumber id="input_r" name="input_r" value="#{attempt.r}" required="true" decimalSeparator=".">
+                            </p:inputNumber>
+                            <label id="error_r"></label>
+                        </p>
+                    </div>
+                    <p class="buttons">
+                        <h:commandButton class="button_animation" id="submit" value="Submit" action="#{databaseManager.addAttempt(attempt)}" />
+                        <h:commandButton class="button_animation" id="clear" value="Clear" action="#{databaseManager.clearAttempts()}" />
+                    </p>
+                </h:form>
+            </div>
+
+        <h:dataTable id="results" value="#{databaseManager.attempts}" var="attempt">
+            <tr>
+                <td>Attempt</td>
+                <td>X</td>
+                <td>Y</td>
+                <td>R</td>
+                <td>Result</td>
+                <th>Time</th>
+                <th>Script time</th>
+            </tr>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="ID" />
+                </f:facet>
+                <h:outputText value="#{attempt.attempt}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="X" />
+                </f:facet>
+                <h:outputText value="#{attempt.x}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Y" />
+                </f:facet>
+                <h:outputText value="#{attempt.y}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="R" />
+                </f:facet>
+                <h:outputText value="#{attempt.r}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Result"  />
+                </f:facet>
+                <h:outputText value="#{attempt.result}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Time" />
+                </f:facet>
+                <h:outputText value="#{attempt.time}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Script time" />
+                </f:facet>
+                <h:outputText value="#{attempt.script_time} ms" />
+            </h:column>
+        </h:dataTable>
+        </div>
+        <div id="footer" role="contentinfo">
+             <ui:insert name="footer" >
+                 <ui:include src="./sources/footer.xhtml" />
+             </ui:insert>
+        </div>
+    </div>
+</h:body>
+<script src="./resources/js/main.js"></script>
+
+</html>

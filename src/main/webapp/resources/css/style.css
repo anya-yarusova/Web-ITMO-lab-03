@@ -1,0 +1,194 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+:root {
+    font-size: 20px;
+    font-family: sans-serif;
+    background-color: #0c1116;
+}
+.canvas {
+    padding-top: 15px;
+    padding-left: 15px;
+}
+canvas {
+    background: #161a23;
+    font-size: 30px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    outline: 2px solid #1e232f;
+}
+.header {
+    font-size: 20px;
+    font-family: sans-serif;
+    background-color: #161a23;
+    overflow: hidden;
+}
+.header h1 {
+    font-size: 40px;
+    color: #bac3cb;
+    padding-left: 50px;
+}
+.header h2 {
+    font-size: 30px;
+    color: #a3abb1;
+    padding-left: 50px;
+}
+.header h1::after {
+    color: transparent;
+    content: " | Group: P32151";
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+.header h1:hover::after {
+    color: #a3abb1;
+}
+
+.footer {
+    font-size: 40px;
+    font-family: sans-serif;
+
+    overflow: hidden;
+    bottom:2%;
+    right:2%;
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+thead {
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+tbody {
+    font-weight: 400;
+}
+
+th, td {
+    padding: 10px 10px;
+    color: #bac3cb;
+}
+
+.value_picker_field {
+    padding: 5px 0px;
+}
+
+.value_picker_element {
+    background: #0c1116;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #1e232f;
+    outline: none;
+}
+.limitations {
+    color: #e3817d;
+    padding-left: 15px;
+}
+
+input.value_picker_element {
+    color: #bac3cb;
+    width: 250px;
+    padding: 10px;
+}
+input {
+    color: #000000;
+    padding: 10px;
+    background: #bac3cb;
+    border-radius: 10px;
+    border: 2px solid #2d3341;
+}
+input.input_r:focus, input.input_y:focus {
+    background: #f5f8fa;
+}
+
+input.button_animation:hover {
+    background: #6099a6;
+}
+
+
+
+label {
+    color: #bac3cb;
+    margin-right: 10px;
+}
+
+.x-button {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #1e232f;
+    background: #bac3cb;
+    background: #bac3cb;
+    border-radius: 10px;
+    color: #000000;
+}
+
+
+main {
+    margin-left: 50px;
+}
+
+.value_picker {
+    padding-top: 130px;
+    padding-left : 130px;
+}
+
+#error_y, #error_r {
+    color: #e3817d;
+    padding-left: 15px;
+}
+
+.x-button:hover {
+    background: #7fa9c9;
+}
+
+.button_animation {
+    padding: 10px 25px;
+    font-size: 30px;
+    background: #0c1116;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid #1e232f;
+    transition: 0.3s;
+    color: #bac3cb;
+    margin : 10px;
+}
+.buttons {
+    padding-top: 40px;
+}
+
+select {
+    color : #bac3cb;
+}
+
+option {
+    color :#bac3cb;
+    background: #0c1116;
+}
+
+.selected {
+    background: #6099a6;
+}

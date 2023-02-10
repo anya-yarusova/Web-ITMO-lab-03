@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+
+<h:head>
+    <title>Lab_03</title>
+    <h:outputStylesheet name="css/style.css" />
+    <h:outputStylesheet name="css/clock.css" />
+</h:head>
+
+<h:body>
+
+    <div id="page" style ="min-height: 100%; display: grid; grid-template-rows: auto 1fr auto">
+        <div id="header" role="banner">
+            <ui:insert name="header" >
+                <ui:include src="./sources/header.xhtml" />
+            </ui:insert>
+        </div>
+
+        <div id="body" role="main">
+            <div class="clock" role="main">
+                <div id="time" class="time" onload="showTime()"></div>
+                <div id="date" class="date" onload="showDate()"></div>
+
+            </div>
+
+        </div>
+
+        <div id="footer" role="contentinfo">
+            <ui:insert name="footer" >
+                <ui:include src="./sources/footer.xhtml" />
+            </ui:insert>
+        </div>
+    </div>
+
+</h:body>
+<script src = "./resources/js/clock.js"></script>
+
+</html>

@@ -1,0 +1,10 @@
+.clock{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #6099a6;
+    font-size: 60px;
+    font-family: Orbitron, sans-serif;
+    letter-spacing: 7px;
+}
