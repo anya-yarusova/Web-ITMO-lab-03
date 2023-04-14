@@ -18,9 +18,9 @@ import java.util.List;
 public class DatabaseManager implements Serializable {
     private static final long serialVersionUID = 2L;
 
-    private final String URL = "jdbc:postgresql://pg:5432/studs";//"jdbc:postgresql://localhost:8081/postgres";
-    private final String USERNAME = "s335149";//"postgres"; // //
-    private final String PASSWORD = "61KYCp4u7X0NXI90";// "pasword";
+    private final String URL = "jdbc:postgresql://localhost:8081/postgres";
+    private final String USERNAME = "postgres"; 
+    private final String PASSWORD = "";
     // password helios: KZfl!7463
 
     private static String checkArea(float x, float y, float r) {
