@@ -21,7 +21,6 @@ public class DatabaseManager implements Serializable {
     private final String URL = "jdbc:postgresql://localhost:8081/postgres";
     private final String USERNAME = "postgres"; 
     private final String PASSWORD = "";
-    // password helios: KZfl!7463
 
     private static String checkArea(float x, float y, float r) {
         boolean res =  (x >= 0 && y >= 0 && x * x + y * y <= r * r / 4) ||
